@@ -1,21 +1,38 @@
-# {Company} Node Library
+# PackageX Node Library
 
-[![npm shield](https://img.shields.io/npm/v/@fern-api/{company})](https://www.npmjs.com/package/@fern-api/{company})
+[![npm shield](https://img.shields.io/npm/v/@fern-api/packagex)](https://www.npmjs.com/package/@fern-api/packagex)
 
-The {Company} Node.js library provides access to the {Company} API from JavaScript/TypeScript.
+The PackageX Node.js library provides access to the PackageX API from JavaScript/TypeScript.
 
 ## Documentation
 
-API reference documentation is available [here](docs_url).
+API reference documentation is available [here](https://docs.packagex.io/docs/getting-started/welcome).
 
 ## Usage
 
-[![Try it out](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](TODO)
+[![Try it out](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/typescript-example-using-sdk-built-with-fern-84rdp6?file=app.ts)
 
 ```typescript
-import { TODO } from "TODO";
+import { PackagexApiClient } from '@fern-api/packagex';
 
-const TODO
+void main();
+
+async function main() {
+  const client = new PackagexApiClient({
+    apiKey: 'PACKAGE_X_API_KEY',
+  });
+
+  client.shipments
+    .list()
+    .then((response) => console.log(response.data))
+    .catch((error) => console.error(error));
+
+  client.shipments
+    .retrieve('Example Shipment')
+    .then((response) => console.log(response.data))
+    .catch((error) => console.log(error));
+}
+
 ```
 
 ## Beta status
