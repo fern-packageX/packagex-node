@@ -12,7 +12,7 @@ import * as errors from "../../../../errors";
 export declare namespace Shipments {
     interface Options {
         environment?: environments.PackagexApiEnvironment | string;
-        securityScheme?: core.Supplier<string>;
+        apiKey?: core.Supplier<string>;
     }
 }
 
@@ -27,7 +27,7 @@ export class Shipments {
             url: urlJoin(this.options.environment ?? environments.PackagexApiEnvironment.Production, "/v1/shipments"),
             method: "POST",
             headers: {
-                "PX-API-KEY": await core.Supplier.get(this.options.securityScheme),
+                "PX-API-KEY": await core.Supplier.get(this.options.apiKey),
             },
             body: await serializers.CreateShipmentRequest.jsonOrThrow(request),
         });
@@ -67,7 +67,7 @@ export class Shipments {
             url: urlJoin(this.options.environment ?? environments.PackagexApiEnvironment.Production, "/v1/shipments"),
             method: "GET",
             headers: {
-                "PX-API-KEY": await core.Supplier.get(this.options.securityScheme),
+                "PX-API-KEY": await core.Supplier.get(this.options.apiKey),
             },
         });
         if (_response.ok) {
@@ -109,7 +109,7 @@ export class Shipments {
             ),
             method: "GET",
             headers: {
-                "PX-API-KEY": await core.Supplier.get(this.options.securityScheme),
+                "PX-API-KEY": await core.Supplier.get(this.options.apiKey),
             },
         });
         if (_response.ok) {
@@ -151,7 +151,7 @@ export class Shipments {
             ),
             method: "POST",
             headers: {
-                "PX-API-KEY": await core.Supplier.get(this.options.securityScheme),
+                "PX-API-KEY": await core.Supplier.get(this.options.apiKey),
             },
         });
         if (_response.ok) {

@@ -9,7 +9,7 @@ import { Shipments } from "./api/resources/shipments/client/Client";
 export declare namespace PackagexApiClient {
     interface Options {
         environment?: environments.PackagexApiEnvironment | string;
-        securityScheme?: core.Supplier<string>;
+        apiKey?: core.Supplier<string>;
     }
 }
 
