@@ -22,15 +22,9 @@ async function main() {
     apiKey: 'PACKAGE_X_API_KEY',
   });
 
-  client.shipments
-    .list()
-    .then((response) => console.log(response.data))
-    .catch((error) => console.error(error));
+  const shipment = await client.shipments.retrieve('Example Shipment');
 
-  client.shipments
-    .retrieve('Example Shipment')
-    .then((response) => console.log(response.data))
-    .catch((error) => console.log(error));
+  console.log('Received shipment from PackageX', shipment);
 }
 
 ```
