@@ -10,7 +10,7 @@ API reference documentation is available [here](https://docs.packagex.io/docs/ge
 
 ## Usage
 
-[![Try it out](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/typescript-example-using-sdk-built-with-fern-84rdp6?file=app.ts)
+[![Try it out](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/typescript-example-using-sdk-built-with-fern-xchzpz?file=app.ts)
 
 ```typescript
 import { PackageXClient } from '@fern-api/packagex';
