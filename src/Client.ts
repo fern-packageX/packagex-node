@@ -4,21 +4,35 @@
 
 import * as environments from "./environments";
 import * as core from "./core";
-import { Shipments } from "./api/resources/shipments/client/Client";
+import { Address } from "./api/resources/address/client/Client";
+import { Inventory } from "./api/resources/inventory/client/Client";
+import { Shipment } from "./api/resources/shipment/client/Client";
 
 export declare namespace PackagexApiClient {
     interface Options {
         environment?: environments.PackagexApiEnvironment | string;
-        apiKey?: core.Supplier<string>;
+        apiKey: core.Supplier<string>;
     }
 }
 
 export class PackagexApiClient {
     constructor(private readonly options: PackagexApiClient.Options) {}
 
-    private _shipments: Shipments | undefined;
+    private _address: Address | undefined;
 
-    public get shipments(): Shipments {
-        return (this._shipments ??= new Shipments(this.options));
+    public get address(): Address {
+        return (this._address ??= new Address(this.options));
+    }
+
+    private _inventory: Inventory | undefined;
+
+    public get inventory(): Inventory {
+        return (this._inventory ??= new Inventory(this.options));
+    }
+
+    private _shipment: Shipment | undefined;
+
+    public get shipment(): Shipment {
+        return (this._shipment ??= new Shipment(this.options));
     }
 }

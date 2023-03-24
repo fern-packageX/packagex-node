@@ -1,4 +1,9 @@
+export * as address from "./address";
+export * from "./address/types";
 export * as commons from "./commons";
 export * from "./commons/types";
-export * as shipments from "./shipments";
-export * from "./shipments/types";
+export * as inventory from "./inventory";
+export * as shipment from "./shipment";
+export * from "./shipment/types";
+export * from "./address/client/requests";
+export * from "./shipment/client/requests";

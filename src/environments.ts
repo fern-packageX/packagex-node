@@ -4,7 +4,7 @@
 
 export const PackagexApiEnvironment = {
     Production: "https://api.packagex.io",
-    Sandbox: "https://api.packagex.io",
+    Sandbox: "https://sandbox.packagex.io",
 } as const;
 
 export type PackagexApiEnvironment = typeof PackagexApiEnvironment.Production | typeof PackagexApiEnvironment.Sandbox;
