@@ -86,45 +86,13 @@ import { PackageX } from "@fern-api/packagex";
  *             name: "Odin Oliver",
  *             email: "odin.oliver@packagex.io",
  *             phone: "4844836699",
- *             contactId: "fwefwv28281",
- *             address: {
- *                 id: "fefewfe_9292",
- *                 hash: "efneif_2921",
- *                 line1: "600 B. Street",
- *                 line2: "Suite 300",
- *                 city: "San Diego",
- *                 state: "California",
- *                 stateCode: "CA",
- *                 country: "United States",
- *                 countryCode: "US",
- *                 postalCode: "90101",
- *                 formattedAddress: "600 B. Street, Suite 300 7th Ave, Fl 10, San Diego, California 90101",
- *                 textarea: "600 B. Street",
- *                 timezone: "PST",
- *                 verified: true
- *             }
+ *             contactId: "fwefwv28281"
  *         },
  *         sender: {
  *             name: "Jamie Jones",
  *             email: "jamie@packagex.io",
  *             phone: "4844836699",
- *             contactId: "cwnwif2821",
- *             address: {
- *                 id: "defnewfed_93392",
- *                 hash: "dac0efe_w9dw",
- *                 line1: "500 7th Ave",
- *                 line2: "Fl 10",
- *                 city: "New York",
- *                 state: "New York",
- *                 stateCode: "NY",
- *                 country: "United States",
- *                 countryCode: "US",
- *                 postalCode: "10018",
- *                 formattedAddress: "500 7th Ave, Fl 10, New York, NY, 10018",
- *                 textarea: "500 7th Ave",
- *                 timezone: "EST",
- *                 verified: true
- *             }
+ *             contactId: "cwnwif2821"
  *         },
  *         organizationId: "dwndiwqe22en2",
  *         invoiceId: "verwdwdwq3j33x2",

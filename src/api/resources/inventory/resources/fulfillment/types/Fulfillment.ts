@@ -16,23 +16,7 @@ import { PackageX } from "@fern-api/packagex";
  *             name: "Odin Oliver",
  *             email: "odin.oliver@packagex.io",
  *             phone: "4844836699",
- *             contactId: "fwefwv28281",
- *             address: {
- *                 id: "fefewfe_9292",
- *                 hash: "efneif_2921",
- *                 line1: "600 B. Street",
- *                 line2: "Suite 300",
- *                 city: "San Diego",
- *                 state: "California",
- *                 stateCode: "CA",
- *                 country: "United States",
- *                 countryCode: "US",
- *                 postalCode: "90101",
- *                 formattedAddress: "600 B. Street, Suite 300 7th Ave, Fl 10, San Diego, California 90101",
- *                 textarea: "600 B. Street",
- *                 timezone: "PST",
- *                 verified: true
- *             }
+ *             contactId: "fwefwv28281"
  *         },
  *         inventory: [{
  *                 id: "item_5og9NZ92SYzHKFTPYSEnVK",
@@ -72,23 +56,7 @@ import { PackageX } from "@fern-api/packagex";
  *             name: "Odin Oliver",
  *             email: "odin.oliver@packagex.io",
  *             phone: "4844836699",
- *             contactId: "fwefwv28281",
- *             address: {
- *                 id: "fefewfe_9292",
- *                 hash: "efneif_2921",
- *                 line1: "600 B. Street",
- *                 line2: "Suite 300",
- *                 city: "San Diego",
- *                 state: "California",
- *                 stateCode: "CA",
- *                 country: "United States",
- *                 countryCode: "US",
- *                 postalCode: "90101",
- *                 formattedAddress: "600 B. Street, Suite 300 7th Ave, Fl 10, San Diego, California 90101",
- *                 textarea: "600 B. Street",
- *                 timezone: "PST",
- *                 verified: true
- *             }
+ *             contactId: "fwefwv28281"
  *         },
  *         inventory: [{
  *                 id: "item_5og9NZ92SYzHKFTPYSEnVK",
@@ -133,23 +101,7 @@ import { PackageX } from "@fern-api/packagex";
  *             name: "Odin Oliver",
  *             email: "odin.oliver@packagex.io",
  *             phone: "4844836699",
- *             contactId: "fwefwv28281",
- *             address: {
- *                 id: "fefewfe_9292",
- *                 hash: "efneif_2921",
- *                 line1: "600 B. Street",
- *                 line2: "Suite 300",
- *                 city: "San Diego",
- *                 state: "California",
- *                 stateCode: "CA",
- *                 country: "United States",
- *                 countryCode: "US",
- *                 postalCode: "90101",
- *                 formattedAddress: "600 B. Street, Suite 300 7th Ave, Fl 10, San Diego, California 90101",
- *                 textarea: "600 B. Street",
- *                 timezone: "PST",
- *                 verified: true
- *             }
+ *             contactId: "fwefwv28281"
  *         },
  *         inventory: [{
  *                 id: "item_5og9NZ92SYzHKFTPYSEnVK",

@@ -8,7 +8,7 @@ import * as core from "../../../../core";
 
 export const Recipient: core.serialization.ObjectSchema<serializers.Recipient.Raw, PackageX.Recipient> =
     core.serialization.object({
-        address: core.serialization.lazyObject(async () => (await import("../../..")).ParsedAddress),
+        address: core.serialization.lazy(async () => (await import("../../..")).Address).optional(),
         name: core.serialization.string(),
         email: core.serialization.string(),
         phone: core.serialization.string(),
@@ -17,7 +17,7 @@ export const Recipient: core.serialization.ObjectSchema<serializers.Recipient.Ra
 
 export declare namespace Recipient {
     interface Raw {
-        address: serializers.ParsedAddress.Raw;
+        address?: serializers.Address.Raw | null;
         name: string;
         email: string;
         phone: string;
