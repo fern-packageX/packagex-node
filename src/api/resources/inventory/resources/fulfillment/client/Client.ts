@@ -176,7 +176,7 @@ export class Fulfillment {
                     fulfillmentId
                 )}/parcels/${await serializers.inventory.ParcelId.jsonOrThrow(parcelId)}`
             ),
-            method: "POST",
+            method: "DELETE",
             contentType: "application/json",
         });
         if (_response.ok) {
