@@ -13,12 +13,12 @@ API reference documentation is available [here](https://docs.packagex.io/docs/ge
 [![Try it out](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/typescript-example-using-sdk-built-with-fern-84rdp6?file=app.ts)
 
 ```typescript
-import { PackagexApiClient } from '@fern-api/packagex';
+import { PackageXClient } from '@fern-api/packagex';
 
 void main();
 
 async function main() {
-  const client = new PackagexApiClient({
+  const client = new PackageXClient({
     apiKey: 'PACKAGE_X_API_KEY',
   });
 
