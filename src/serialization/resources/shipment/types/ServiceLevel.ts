@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const ServiceLevel: core.serialization.ObjectSchema<serializers.ServiceLevel.Raw, PackagexApi.ServiceLevel> =
+export const ServiceLevel: core.serialization.ObjectSchema<serializers.ServiceLevel.Raw, PackageX.ServiceLevel> =
     core.serialization.object({
         name: core.serialization.string(),
         id: core.serialization.string(),

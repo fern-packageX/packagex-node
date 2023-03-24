@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../../../core";
 
 export const InventoryLevel: core.serialization.ObjectSchema<
     serializers.inventory.InventoryLevel.Raw,
-    PackagexApi.inventory.InventoryLevel
+    PackageX.inventory.InventoryLevel
 > = core.serialization.object({
     id: core.serialization.string(),
     locationId: core.serialization.property("location_id", core.serialization.string()),

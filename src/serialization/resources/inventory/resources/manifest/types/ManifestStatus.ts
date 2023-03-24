@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../../../core";
 
 export const ManifestStatus: core.serialization.Schema<
     serializers.inventory.ManifestStatus.Raw,
-    PackagexApi.inventory.ManifestStatus
+    PackageX.inventory.ManifestStatus
 > = core.serialization.enum_(["requested", "accepted", "processing", "completed", "void"]);
 
 export declare namespace ManifestStatus {

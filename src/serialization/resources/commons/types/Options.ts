@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const Options: core.serialization.ObjectSchema<serializers.Options.Raw, PackagexApi.Options> =
+export const Options: core.serialization.ObjectSchema<serializers.Options.Raw, PackageX.Options> =
     core.serialization.object({
         parseAddresses: core.serialization.property("parse_addresses", core.serialization.boolean()),
         matchContacts: core.serialization.property("match_contacts", core.serialization.boolean()),

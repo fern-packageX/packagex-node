@@ -3,24 +3,22 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const ParcelShipment: core.serialization.ObjectSchema<
-    serializers.ParcelShipment.Raw,
-    PackagexApi.ParcelShipment
-> = core.serialization.object({
-    length: core.serialization.number().optional(),
-    width: core.serialization.number().optional(),
-    height: core.serialization.number().optional(),
-    weight: core.serialization.number().optional(),
-    type: core.serialization.lazy(async () => (await import("../../..")).PackageType).optional(),
-    specialHandling: core.serialization.property(
-        "special_handling",
-        core.serialization.lazy(async () => (await import("../../..")).SpecialHandling).optional()
-    ),
-    inventory: core.serialization.lazyObject(async () => (await import("../../..")).inventory.Inventory).optional(),
-});
+export const ParcelShipment: core.serialization.ObjectSchema<serializers.ParcelShipment.Raw, PackageX.ParcelShipment> =
+    core.serialization.object({
+        length: core.serialization.number().optional(),
+        width: core.serialization.number().optional(),
+        height: core.serialization.number().optional(),
+        weight: core.serialization.number().optional(),
+        type: core.serialization.lazy(async () => (await import("../../..")).PackageType).optional(),
+        specialHandling: core.serialization.property(
+            "special_handling",
+            core.serialization.lazy(async () => (await import("../../..")).SpecialHandling).optional()
+        ),
+        inventory: core.serialization.lazyObject(async () => (await import("../../..")).inventory.Inventory).optional(),
+    });
 
 export declare namespace ParcelShipment {
     interface Raw {

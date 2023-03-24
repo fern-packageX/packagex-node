@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const PackageType: core.serialization.Schema<serializers.PackageType.Raw, PackagexApi.PackageType> =
+export const PackageType: core.serialization.Schema<serializers.PackageType.Raw, PackageX.PackageType> =
     core.serialization.enum_([
         "usps_flat_rate_envelope",
         "usps_flat_rate_window_envelope",

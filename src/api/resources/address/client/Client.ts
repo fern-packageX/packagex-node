@@ -4,14 +4,14 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import urlJoin from "url-join";
 import * as serializers from "../../../../serialization";
 import * as errors from "../../../../errors";
 
 export declare namespace Address {
     interface Options {
-        environment?: environments.PackagexApiEnvironment | string;
+        environment?: environments.PackageXEnvironment | string;
         apiKey: core.Supplier<string>;
     }
 }
@@ -23,11 +23,11 @@ export class Address {
      * Allows users to submit a piece of an address string and have the API respond with the best possible options
      */
     public async autocomplete(
-        request: PackagexApi.AutocompleteAddressRequest
-    ): Promise<PackagexApi.AutocompleteAddressResponse> {
+        request: PackageX.AutocompleteAddressRequest
+    ): Promise<PackageX.AutocompleteAddressResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                this.options.environment ?? environments.PackagexApiEnvironment.Production,
+                this.options.environment ?? environments.PackageXEnvironment.Production,
                 "/v1/address/autocomplete"
             ),
             method: "POST",
@@ -45,7 +45,7 @@ export class Address {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.PackagexApiError({
+            throw new errors.PackageXError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
             });
@@ -53,14 +53,14 @@ export class Address {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.PackagexApiTimeoutError();
+                throw new errors.PackageXTimeoutError();
             case "unknown":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -69,12 +69,9 @@ export class Address {
     /**
      * Takes addresses in multiple different formats and returns the address in the PackageX address mode.
      */
-    public async parse(request: PackagexApi.ParseAddressRequest): Promise<PackagexApi.ParseAddressResponse> {
+    public async parse(request: PackageX.ParseAddressRequest): Promise<PackageX.ParseAddressResponse> {
         const _response = await core.fetcher({
-            url: urlJoin(
-                this.options.environment ?? environments.PackagexApiEnvironment.Production,
-                "/v1/address/parse"
-            ),
+            url: urlJoin(this.options.environment ?? environments.PackageXEnvironment.Production, "/v1/address/parse"),
             method: "POST",
             contentType: "application/json",
             body: await serializers.ParseAddressRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
@@ -88,7 +85,7 @@ export class Address {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.PackagexApiError({
+            throw new errors.PackageXError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
             });
@@ -96,14 +93,14 @@ export class Address {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.PackagexApiTimeoutError();
+                throw new errors.PackageXTimeoutError();
             case "unknown":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     message: _response.error.errorMessage,
                 });
         }

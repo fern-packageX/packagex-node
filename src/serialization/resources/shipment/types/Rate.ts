@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const Rate: core.serialization.ObjectSchema<serializers.Rate.Raw, PackagexApi.Rate> = core.serialization.object({
+export const Rate: core.serialization.ObjectSchema<serializers.Rate.Raw, PackageX.Rate> = core.serialization.object({
     id: core.serialization.string(),
     amount: core.serialization.number(),
     billedAmount: core.serialization.property("billed_amount", core.serialization.number()),

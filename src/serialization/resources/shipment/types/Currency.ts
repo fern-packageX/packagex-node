@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const Currency: core.serialization.Schema<serializers.Currency.Raw, PackagexApi.Currency> =
+export const Currency: core.serialization.Schema<serializers.Currency.Raw, PackageX.Currency> =
     core.serialization.enum_(["usd"]);
 
 export declare namespace Currency {

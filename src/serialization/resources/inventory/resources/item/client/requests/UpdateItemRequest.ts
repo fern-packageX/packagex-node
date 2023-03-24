@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../../../../core";
 
 export const UpdateItemRequest: core.serialization.Schema<
     serializers.inventory.UpdateItemRequest.Raw,
-    PackagexApi.inventory.UpdateItemRequest
+    PackageX.inventory.UpdateItemRequest
 > = core.serialization.object({
     name: core.serialization.string().optional(),
     levels: core.serialization

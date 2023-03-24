@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../../../core";
 
 export const FulfillmentStatus: core.serialization.Schema<
     serializers.inventory.FulfillmentStatus.Raw,
-    PackagexApi.inventory.FulfillmentStatus
+    PackageX.inventory.FulfillmentStatus
 > = core.serialization.enum_(["created", "processing", "packed", "completed", "canceled"]);
 
 export declare namespace FulfillmentStatus {

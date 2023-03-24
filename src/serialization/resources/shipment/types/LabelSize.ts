@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const LabelSize: core.serialization.Schema<serializers.LabelSize.Raw, PackagexApi.LabelSize> =
+export const LabelSize: core.serialization.Schema<serializers.LabelSize.Raw, PackageX.LabelSize> =
     core.serialization.enum_(["4x6", "letter", "4x8", "a4", "a6"]);
 
 export declare namespace LabelSize {

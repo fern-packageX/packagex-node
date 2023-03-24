@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const ShipmentEvent: core.serialization.Schema<serializers.ShipmentEvent.Raw, PackagexApi.ShipmentEvent> =
+export const ShipmentEvent: core.serialization.Schema<serializers.ShipmentEvent.Raw, PackageX.ShipmentEvent> =
     core.serialization.enum_([
         "shipment.rates_generated",
         "shipment.expired",

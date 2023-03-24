@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../../../core";
 
 export const Manifest: core.serialization.ObjectSchema<
     serializers.inventory.Manifest.Raw,
-    PackagexApi.inventory.Manifest
+    PackageX.inventory.Manifest
 > = core.serialization.object({
     createdAt: core.serialization.property("created_at", core.serialization.number()),
     createdInventory: core.serialization.property(

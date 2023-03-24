@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../../../../core";
 
 export const PackParcelRequest: core.serialization.Schema<
     serializers.inventory.PackParcelRequest.Raw,
-    PackagexApi.inventory.PackParcelRequest
+    PackageX.inventory.PackParcelRequest
 > = core.serialization.object({
     inventory: core.serialization.list(
         core.serialization.lazyObject(async () => (await import("../../../../../..")).inventory.Inventory)

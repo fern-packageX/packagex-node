@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
 export const AddressSuggestion: core.serialization.ObjectSchema<
     serializers.AddressSuggestion.Raw,
-    PackagexApi.AddressSuggestion
+    PackageX.AddressSuggestion
 > = core.serialization.object({
     address: core.serialization.string(),
     matchedText: core.serialization.property("matched_text", core.serialization.string()),

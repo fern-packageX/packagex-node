@@ -3,24 +3,22 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const TrackingUpdate: core.serialization.ObjectSchema<
-    serializers.TrackingUpdate.Raw,
-    PackagexApi.TrackingUpdate
-> = core.serialization.object({
-    address: core.serialization.lazyObject(async () => (await import("../../..")).ParsedAddress),
-    status: core.serialization.lazy(async () => (await import("../../..")).ShipmentStatus),
-    comment: core.serialization.string().optional(),
-    images: core.serialization.list(core.serialization.string()),
-    message: core.serialization.string(),
-    event: core.serialization.lazy(async () => (await import("../../..")).ShipmentEvent),
-    createdAt: core.serialization.property("created_at", core.serialization.number()),
-    updatedAt: core.serialization.property("updated_at", core.serialization.number()),
-    locationId: core.serialization.property("location_id", core.serialization.string().optional()),
-    layoutId: core.serialization.property("layout_id", core.serialization.string().optional()),
-});
+export const TrackingUpdate: core.serialization.ObjectSchema<serializers.TrackingUpdate.Raw, PackageX.TrackingUpdate> =
+    core.serialization.object({
+        address: core.serialization.lazyObject(async () => (await import("../../..")).ParsedAddress),
+        status: core.serialization.lazy(async () => (await import("../../..")).ShipmentStatus),
+        comment: core.serialization.string().optional(),
+        images: core.serialization.list(core.serialization.string()),
+        message: core.serialization.string(),
+        event: core.serialization.lazy(async () => (await import("../../..")).ShipmentEvent),
+        createdAt: core.serialization.property("created_at", core.serialization.number()),
+        updatedAt: core.serialization.property("updated_at", core.serialization.number()),
+        locationId: core.serialization.property("location_id", core.serialization.string().optional()),
+        layoutId: core.serialization.property("layout_id", core.serialization.string().optional()),
+    });
 
 export declare namespace TrackingUpdate {
     interface Raw {

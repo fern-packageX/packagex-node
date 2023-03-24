@@ -4,14 +4,14 @@
 
 import * as environments from "../../../../../../environments";
 import * as core from "../../../../../../core";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import urlJoin from "url-join";
 import * as serializers from "../../../../../../serialization";
 import * as errors from "../../../../../../errors";
 
 export declare namespace Item {
     interface Options {
-        environment?: environments.PackagexApiEnvironment | string;
+        environment?: environments.PackageXEnvironment | string;
         apiKey: core.Supplier<string>;
     }
 }
@@ -19,9 +19,9 @@ export declare namespace Item {
 export class Item {
     constructor(private readonly options: Item.Options) {}
 
-    public async create(request: PackagexApi.inventory.CreateItemRequest): Promise<PackagexApi.inventory.ItemResponse> {
+    public async create(request: PackageX.inventory.CreateItemRequest): Promise<PackageX.inventory.ItemResponse> {
         const _response = await core.fetcher({
-            url: urlJoin(this.options.environment ?? environments.PackagexApiEnvironment.Production, "/v1/items"),
+            url: urlJoin(this.options.environment ?? environments.PackageXEnvironment.Production, "/v1/items"),
             method: "POST",
             contentType: "application/json",
             body: await serializers.inventory.CreateItemRequest.jsonOrThrow(request, {
@@ -37,7 +37,7 @@ export class Item {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.PackagexApiError({
+            throw new errors.PackageXError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
             });
@@ -45,14 +45,14 @@ export class Item {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.PackagexApiTimeoutError();
+                throw new errors.PackageXTimeoutError();
             case "unknown":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -62,12 +62,12 @@ export class Item {
      * Updates a single item. When updating inventory, you increment and decrement quantities by passing in positive and negative integers. Lastly, you can optionally provide a layout value to be more specific about the item's exact whereabouts in that location
      */
     public async update(
-        itemId: PackagexApi.inventory.ItemId,
-        request: PackagexApi.inventory.UpdateItemRequest = {}
-    ): Promise<PackagexApi.inventory.ItemResponse> {
+        itemId: PackageX.inventory.ItemId,
+        request: PackageX.inventory.UpdateItemRequest = {}
+    ): Promise<PackageX.inventory.ItemResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                this.options.environment ?? environments.PackagexApiEnvironment.Production,
+                this.options.environment ?? environments.PackageXEnvironment.Production,
                 `/v1/items/${await serializers.inventory.ItemId.jsonOrThrow(itemId)}`
             ),
             method: "POST",
@@ -85,7 +85,7 @@ export class Item {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.PackagexApiError({
+            throw new errors.PackageXError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
             });
@@ -93,14 +93,14 @@ export class Item {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.PackagexApiTimeoutError();
+                throw new errors.PackageXTimeoutError();
             case "unknown":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -109,10 +109,10 @@ export class Item {
     /**
      * Gets a single item
      */
-    public async retrieve(itemId: string): Promise<PackagexApi.inventory.ItemResponse> {
+    public async retrieve(itemId: string): Promise<PackageX.inventory.ItemResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                this.options.environment ?? environments.PackagexApiEnvironment.Production,
+                this.options.environment ?? environments.PackageXEnvironment.Production,
                 `/v1/items/${itemId}`
             ),
             method: "GET",
@@ -127,7 +127,7 @@ export class Item {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.PackagexApiError({
+            throw new errors.PackageXError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
             });
@@ -135,14 +135,14 @@ export class Item {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.PackagexApiTimeoutError();
+                throw new errors.PackageXTimeoutError();
             case "unknown":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -151,9 +151,9 @@ export class Item {
     /**
      * Gets all items
      */
-    public async list(): Promise<PackagexApi.inventory.ListItemResponse> {
+    public async list(): Promise<PackageX.inventory.ListItemResponse> {
         const _response = await core.fetcher({
-            url: urlJoin(this.options.environment ?? environments.PackagexApiEnvironment.Production, "/v1/items"),
+            url: urlJoin(this.options.environment ?? environments.PackageXEnvironment.Production, "/v1/items"),
             method: "GET",
             contentType: "application/json",
         });
@@ -166,7 +166,7 @@ export class Item {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.PackagexApiError({
+            throw new errors.PackageXError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
             });
@@ -174,14 +174,14 @@ export class Item {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.PackagexApiTimeoutError();
+                throw new errors.PackageXTimeoutError();
             case "unknown":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -190,10 +190,10 @@ export class Item {
     /**
      * deletes a single item
      */
-    public async delete(itemId: PackagexApi.inventory.ItemId): Promise<PackagexApi.Response> {
+    public async delete(itemId: PackageX.inventory.ItemId): Promise<PackageX.Response> {
         const _response = await core.fetcher({
             url: urlJoin(
-                this.options.environment ?? environments.PackagexApiEnvironment.Production,
+                this.options.environment ?? environments.PackageXEnvironment.Production,
                 `/v1/items/${await serializers.inventory.ItemId.jsonOrThrow(itemId)}`
             ),
             method: "DELETE",
@@ -208,7 +208,7 @@ export class Item {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.PackagexApiError({
+            throw new errors.PackageXError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
             });
@@ -216,14 +216,14 @@ export class Item {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.PackagexApiTimeoutError();
+                throw new errors.PackageXTimeoutError();
             case "unknown":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     message: _response.error.errorMessage,
                 });
         }

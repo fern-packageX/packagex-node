@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const RefundStatus: core.serialization.Schema<serializers.RefundStatus.Raw, PackagexApi.RefundStatus> =
+export const RefundStatus: core.serialization.Schema<serializers.RefundStatus.Raw, PackageX.RefundStatus> =
     core.serialization.enum_(["requested", "refunded", "rejected"]);
 
 export declare namespace RefundStatus {

@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const SpecialHandling: core.serialization.Schema<serializers.SpecialHandling.Raw, PackagexApi.SpecialHandling> =
+export const SpecialHandling: core.serialization.Schema<serializers.SpecialHandling.Raw, PackageX.SpecialHandling> =
     core.serialization.enum_([
         "confidential",
         "fragile",

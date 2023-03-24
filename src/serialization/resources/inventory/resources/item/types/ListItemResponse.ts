@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../../../core";
 
 export const ListItemResponse: core.serialization.ObjectSchema<
     serializers.inventory.ListItemResponse.Raw,
-    PackagexApi.inventory.ListItemResponse
+    PackageX.inventory.ListItemResponse
 > = core.serialization
     .object({
         data: core.serialization.list(

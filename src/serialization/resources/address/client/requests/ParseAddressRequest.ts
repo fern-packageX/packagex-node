@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../../core";
 
 export const ParseAddressRequest: core.serialization.Schema<
     serializers.ParseAddressRequest.Raw,
-    PackagexApi.ParseAddressRequest
+    PackageX.ParseAddressRequest
 > = core.serialization.object({
     address: core.serialization.string(),
 });

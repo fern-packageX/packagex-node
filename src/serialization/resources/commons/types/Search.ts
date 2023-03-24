@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const Search: core.serialization.ObjectSchema<serializers.Search.Raw, PackagexApi.Search> =
+export const Search: core.serialization.ObjectSchema<serializers.Search.Raw, PackageX.Search> =
     core.serialization.object({
         id: core.serialization.string(),
         trackingNumber: core.serialization.property("tracking_number", core.serialization.string()),

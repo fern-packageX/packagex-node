@@ -1,2 +1,2 @@
-export { PackagexApiError } from "./PackagexApiError";
-export { PackagexApiTimeoutError } from "./PackagexApiTimeoutError";
+export { PackageXError } from "./PackageXError";
+export { PackageXTimeoutError } from "./PackageXTimeoutError";

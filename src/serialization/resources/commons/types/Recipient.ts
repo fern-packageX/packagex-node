@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const Recipient: core.serialization.ObjectSchema<serializers.Recipient.Raw, PackagexApi.Recipient> =
+export const Recipient: core.serialization.ObjectSchema<serializers.Recipient.Raw, PackageX.Recipient> =
     core.serialization.object({
         address: core.serialization.lazyObject(async () => (await import("../../..")).ParsedAddress),
         name: core.serialization.string(),

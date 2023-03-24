@@ -3,11 +3,14 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const Filters: core.serialization.Schema<serializers.Filters.Raw, PackagexApi.Filters> =
-    core.serialization.enum_(["completed", "outstanding", "exception"]);
+export const Filters: core.serialization.Schema<serializers.Filters.Raw, PackageX.Filters> = core.serialization.enum_([
+    "completed",
+    "outstanding",
+    "exception",
+]);
 
 export declare namespace Filters {
     type Raw = "completed" | "outstanding" | "exception";

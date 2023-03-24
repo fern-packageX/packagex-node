@@ -4,14 +4,14 @@
 
 import * as environments from "../../../../environments";
 import * as core from "../../../../core";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import urlJoin from "url-join";
 import * as serializers from "../../../../serialization";
 import * as errors from "../../../../errors";
 
 export declare namespace Shipment {
     interface Options {
-        environment?: environments.PackagexApiEnvironment | string;
+        environment?: environments.PackageXEnvironment | string;
         apiKey: core.Supplier<string>;
     }
 }
@@ -25,9 +25,9 @@ export class Shipment {
      * pass in to configure the shipment.
      *
      */
-    public async getRates(request: PackagexApi.GetShipmentRatesRequest): Promise<PackagexApi.ShipmentResponse> {
+    public async getRates(request: PackageX.GetShipmentRatesRequest): Promise<PackageX.ShipmentResponse> {
         const _response = await core.fetcher({
-            url: urlJoin(this.options.environment ?? environments.PackagexApiEnvironment.Production, "/v1/shipments"),
+            url: urlJoin(this.options.environment ?? environments.PackageXEnvironment.Production, "/v1/shipments"),
             method: "POST",
             contentType: "application/json",
             body: await serializers.GetShipmentRatesRequest.jsonOrThrow(request, { unrecognizedObjectKeys: "strip" }),
@@ -41,7 +41,7 @@ export class Shipment {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.PackagexApiError({
+            throw new errors.PackageXError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
             });
@@ -49,14 +49,14 @@ export class Shipment {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.PackagexApiTimeoutError();
+                throw new errors.PackageXTimeoutError();
             case "unknown":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -66,12 +66,12 @@ export class Shipment {
      * Purchase Shipment Rate
      */
     public async purchase(
-        shipmentId: PackagexApi.ShipmentId,
-        request: PackagexApi.PurchaseShipmentRateRequest
-    ): Promise<PackagexApi.ShipmentResponse> {
+        shipmentId: PackageX.ShipmentId,
+        request: PackageX.PurchaseShipmentRateRequest
+    ): Promise<PackageX.ShipmentResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                this.options.environment ?? environments.PackagexApiEnvironment.Production,
+                this.options.environment ?? environments.PackageXEnvironment.Production,
                 `/v1/shipments/${await serializers.ShipmentId.jsonOrThrow(shipmentId)}`
             ),
             method: "POST",
@@ -89,7 +89,7 @@ export class Shipment {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.PackagexApiError({
+            throw new errors.PackageXError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
             });
@@ -97,14 +97,14 @@ export class Shipment {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.PackagexApiTimeoutError();
+                throw new errors.PackageXTimeoutError();
             case "unknown":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -117,12 +117,12 @@ export class Shipment {
      *
      */
     public async refetchRates(
-        shipmentId: PackagexApi.ShipmentId,
-        request: PackagexApi.RefetchShipmentRatesRequest = {}
-    ): Promise<PackagexApi.ShipmentResponse> {
+        shipmentId: PackageX.ShipmentId,
+        request: PackageX.RefetchShipmentRatesRequest = {}
+    ): Promise<PackageX.ShipmentResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                this.options.environment ?? environments.PackagexApiEnvironment.Production,
+                this.options.environment ?? environments.PackageXEnvironment.Production,
                 `/v1/shipments/${await serializers.ShipmentId.jsonOrThrow(shipmentId)}/refetch`
             ),
             method: "POST",
@@ -140,7 +140,7 @@ export class Shipment {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.PackagexApiError({
+            throw new errors.PackageXError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
             });
@@ -148,14 +148,14 @@ export class Shipment {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.PackagexApiTimeoutError();
+                throw new errors.PackageXTimeoutError();
             case "unknown":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -164,9 +164,9 @@ export class Shipment {
     /**
      * Lists shipments up to the specified limit starting at the specified page
      */
-    public async list(): Promise<PackagexApi.ListShipmentResponse> {
+    public async list(): Promise<PackageX.ListShipmentResponse> {
         const _response = await core.fetcher({
-            url: urlJoin(this.options.environment ?? environments.PackagexApiEnvironment.Production, "/v1/shipments"),
+            url: urlJoin(this.options.environment ?? environments.PackageXEnvironment.Production, "/v1/shipments"),
             method: "GET",
             contentType: "application/json",
         });
@@ -179,7 +179,7 @@ export class Shipment {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.PackagexApiError({
+            throw new errors.PackageXError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
             });
@@ -187,14 +187,14 @@ export class Shipment {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.PackagexApiTimeoutError();
+                throw new errors.PackageXTimeoutError();
             case "unknown":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     message: _response.error.errorMessage,
                 });
         }
@@ -203,10 +203,10 @@ export class Shipment {
     /**
      * Retrieves a specific shipment
      */
-    public async retrieve(shipmentId: PackagexApi.ShipmentId): Promise<PackagexApi.ShipmentResponse> {
+    public async retrieve(shipmentId: PackageX.ShipmentId): Promise<PackageX.ShipmentResponse> {
         const _response = await core.fetcher({
             url: urlJoin(
-                this.options.environment ?? environments.PackagexApiEnvironment.Production,
+                this.options.environment ?? environments.PackageXEnvironment.Production,
                 `/v1/shipments/${await serializers.ShipmentId.jsonOrThrow(shipmentId)}`
             ),
             method: "GET",
@@ -221,7 +221,7 @@ export class Shipment {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.PackagexApiError({
+            throw new errors.PackageXError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
             });
@@ -229,14 +229,14 @@ export class Shipment {
 
         switch (_response.error.reason) {
             case "non-json":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     statusCode: _response.error.statusCode,
                     body: _response.error.rawBody,
                 });
             case "timeout":
-                throw new errors.PackagexApiTimeoutError();
+                throw new errors.PackageXTimeoutError();
             case "unknown":
-                throw new errors.PackagexApiError({
+                throw new errors.PackageXError({
                     message: _response.error.errorMessage,
                 });
         }

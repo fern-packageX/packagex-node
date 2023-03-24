@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
 export const ShipmentResponse: core.serialization.ObjectSchema<
     serializers.ShipmentResponse.Raw,
-    PackagexApi.ShipmentResponse
+    PackageX.ShipmentResponse
 > = core.serialization
     .object({
         data: core.serialization.lazyObject(async () => (await import("../../..")).Shipment),

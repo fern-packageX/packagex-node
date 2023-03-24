@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
 export const ShipmentFeedback: core.serialization.ObjectSchema<
     serializers.ShipmentFeedback.Raw,
-    PackagexApi.ShipmentFeedback
+    PackageX.ShipmentFeedback
 > = core.serialization.object({
     rating: core.serialization.lazy(async () => (await import("../../..")).FeedbackRating).optional(),
     comment: core.serialization.string().optional(),

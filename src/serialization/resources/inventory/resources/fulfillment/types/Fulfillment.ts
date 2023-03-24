@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../../../core";
 
 export const Fulfillment: core.serialization.ObjectSchema<
     serializers.inventory.Fulfillment.Raw,
-    PackagexApi.inventory.Fulfillment
+    PackageX.inventory.Fulfillment
 > = core.serialization.object({
     cancelReason: core.serialization.property("cancel_reason", core.serialization.string().optional()),
     createdAt: core.serialization.property("created_at", core.serialization.number()),

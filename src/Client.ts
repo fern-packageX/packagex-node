@@ -8,15 +8,15 @@ import { Address } from "./api/resources/address/client/Client";
 import { Inventory } from "./api/resources/inventory/client/Client";
 import { Shipment } from "./api/resources/shipment/client/Client";
 
-export declare namespace PackagexApiClient {
+export declare namespace PackageXClient {
     interface Options {
-        environment?: environments.PackagexApiEnvironment | string;
+        environment?: environments.PackageXEnvironment | string;
         apiKey: core.Supplier<string>;
     }
 }
 
-export class PackagexApiClient {
-    constructor(private readonly options: PackagexApiClient.Options) {}
+export class PackageXClient {
+    constructor(private readonly options: PackageXClient.Options) {}
 
     private _address: Address | undefined;
 

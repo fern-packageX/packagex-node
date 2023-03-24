@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../../../core";
 
 export const ShipmentRateType: core.serialization.Schema<
     serializers.inventory.ShipmentRateType.Raw,
-    PackagexApi.inventory.ShipmentRateType
+    PackageX.inventory.ShipmentRateType
 > = core.serialization.enum_([
     "in_person_pickup",
     "curbside_pickup",

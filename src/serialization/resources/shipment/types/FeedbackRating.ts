@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const FeedbackRating: core.serialization.Schema<serializers.FeedbackRating.Raw, PackagexApi.FeedbackRating> =
+export const FeedbackRating: core.serialization.Schema<serializers.FeedbackRating.Raw, PackageX.FeedbackRating> =
     core.serialization.number();
 
 export declare namespace FeedbackRating {

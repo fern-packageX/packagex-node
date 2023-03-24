@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../../../../core";
 
 export const CreateManifestRequest: core.serialization.Schema<
     serializers.inventory.CreateManifestRequest.Raw,
-    PackagexApi.inventory.CreateManifestRequest
+    PackageX.inventory.CreateManifestRequest
 > = core.serialization.object({
     locationId: core.serialization.property("location_id", core.serialization.string()),
     inventory: core.serialization.list(

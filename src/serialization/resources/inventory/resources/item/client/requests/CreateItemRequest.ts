@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../../../../core";
 
 export const CreateItemRequest: core.serialization.Schema<
     serializers.inventory.CreateItemRequest.Raw,
-    PackagexApi.inventory.CreateItemRequest
+    PackageX.inventory.CreateItemRequest
 > = core.serialization.object({
     name: core.serialization.string(),
     sku: core.serialization.string().optional(),

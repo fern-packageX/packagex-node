@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
 export const ShipmentOptions: core.serialization.ObjectSchema<
     serializers.ShipmentOptions.Raw,
-    PackagexApi.ShipmentOptions
+    PackageX.ShipmentOptions
 > = core.serialization.object({
     providerTimeout: core.serialization.property("provider_timeout", core.serialization.number().optional()),
     verifyAddress: core.serialization.property("verify_address", core.serialization.boolean().optional()),

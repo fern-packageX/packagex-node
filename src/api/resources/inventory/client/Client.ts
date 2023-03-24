@@ -10,7 +10,7 @@ import { Manifest } from "../resources/manifest/client/Client";
 
 export declare namespace Inventory {
     interface Options {
-        environment?: environments.PackagexApiEnvironment | string;
+        environment?: environments.PackageXEnvironment | string;
         apiKey: core.Supplier<string>;
     }
 }

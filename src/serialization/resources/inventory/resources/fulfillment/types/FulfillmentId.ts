@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../../../core";
 
 export const FulfillmentId: core.serialization.Schema<
     serializers.inventory.FulfillmentId.Raw,
-    PackagexApi.inventory.FulfillmentId
+    PackageX.inventory.FulfillmentId
 > = core.serialization.string();
 
 export declare namespace FulfillmentId {

@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../../core";
 
 export const RefetchShipmentRatesRequest: core.serialization.Schema<
     serializers.RefetchShipmentRatesRequest.Raw,
-    PackagexApi.RefetchShipmentRatesRequest
+    PackageX.RefetchShipmentRatesRequest
 > = core.serialization.object({
     options: core.serialization.lazyObject(async () => (await import("../../../..")).ShipmentOptions).optional(),
 });

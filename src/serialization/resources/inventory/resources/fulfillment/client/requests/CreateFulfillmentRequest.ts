@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../../../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../../../../core";
 
 export const CreateFulfillmentRequest: core.serialization.Schema<
     serializers.inventory.CreateFulfillmentRequest.Raw,
-    PackagexApi.inventory.CreateFulfillmentRequest
+    PackageX.inventory.CreateFulfillmentRequest
 > = core.serialization.object({
     recipient: core.serialization.lazyObject(async () => (await import("../../../../../..")).Recipient),
     locationId: core.serialization.property("location_id", core.serialization.string()),

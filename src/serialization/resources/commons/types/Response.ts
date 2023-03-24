@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const Response: core.serialization.ObjectSchema<serializers.Response.Raw, PackagexApi.Response> =
+export const Response: core.serialization.ObjectSchema<serializers.Response.Raw, PackageX.Response> =
     core.serialization.object({
         status: core.serialization.number(),
         message: core.serialization.string(),

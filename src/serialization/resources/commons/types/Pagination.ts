@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const Pagination: core.serialization.ObjectSchema<serializers.Pagination.Raw, PackagexApi.Pagination> =
+export const Pagination: core.serialization.ObjectSchema<serializers.Pagination.Raw, PackageX.Pagination> =
     core.serialization.object({
         limit: core.serialization.number(),
         page: core.serialization.number(),

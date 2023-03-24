@@ -3,12 +3,12 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
 export const AutocompleteAddressResponse: core.serialization.ObjectSchema<
     serializers.AutocompleteAddressResponse.Raw,
-    PackagexApi.AutocompleteAddressResponse
+    PackageX.AutocompleteAddressResponse
 > = core.serialization
     .object({
         data: core.serialization.list(

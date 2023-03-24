@@ -3,10 +3,10 @@
  */
 
 import * as serializers from "../../..";
-import { PackagexApi } from "@fern-api/packagex";
+import { PackageX } from "@fern-api/packagex";
 import * as core from "../../../../core";
 
-export const ShipmentId: core.serialization.Schema<serializers.ShipmentId.Raw, PackagexApi.ShipmentId> =
+export const ShipmentId: core.serialization.Schema<serializers.ShipmentId.Raw, PackageX.ShipmentId> =
     core.serialization.string();
 
 export declare namespace ShipmentId {
